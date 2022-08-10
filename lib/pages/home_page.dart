@@ -41,18 +41,17 @@ class _HomePageState extends State<HomePage> {
         title: Text("Catalog App"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items!=null && CatalogModel.items.isNotEmpty)? ListView.builder(
-          itemCount: CatalogModel.items.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: CatalogModel.items[index],
-            );
-          },
-        ):Center(
-          child: CircularProgressIndicator(),
-        )
-      ),
+          padding: const EdgeInsets.all(16.0),
+          child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+              ? ListView.builder(
+                  itemCount: CatalogModel.items.length,
+                  itemBuilder: (context, index) => ItemWidget(
+                    item: CatalogModel.items[index],
+                  ),
+                )
+              : Center(
+                  child: CircularProgressIndicator(),
+                )),
       drawer: MyDrawer(),
     );
   }
